@@ -1,4 +1,4 @@
-# go-template-web
+# Homestart
 
 This is a quick and simple example of a Go application configured with a completely containerized dev environment. Features include Live Reloading, Remote Debugging, and a multi-layer containerized production build definition.
 
@@ -23,8 +23,8 @@ To facilitate debugging in VSCode, a [launch configuration](./.vscode/launch.jso
 To generate a release image, simply build the docker file. This utilizes a dedicated build stage along with the [scratch][scratch-url] Docker image to ensure the final image contains only the necessary resources and nothing else.
 
 ```
-> docker build . -t go-template-web
-> docker run -e HOST= -p 8080:8080 go-template-web
+> docker build . -t homestart
+> docker run -e HOST= -p 8080:8080 homestart
 ```
 
 ## Example Application

@@ -3,7 +3,7 @@ bin/
 *.exe
 *.log
 .env
-go-template-web
+homestart
 
 # VSCode
 .vscode/*

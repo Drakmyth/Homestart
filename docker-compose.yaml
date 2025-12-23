@@ -1,11 +1,11 @@
 services:
-    go-template-web:
-        image: go-template-web
+    homestart:
+        image: homestart
         build:
             context: .
             dockerfile: Dockerfile
             target: dev
-        container_name: go-template-web
+        container_name: homestart
         environment:
             - HOST=
         ports:

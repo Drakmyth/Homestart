@@ -1,5 +1,5 @@
 # Base Stage
-FROM golang:1.22.5 AS base
+FROM golang:1.25.5 AS base
 WORKDIR /app
 
 COPY go.mod go.sum ./
@@ -25,7 +25,7 @@ WORKDIR /app
 RUN useradd -u 1001 appuser
 
 COPY . ./
-RUN go build -ldflags="-linkmode external -extldflags -static" -o ./bin/go-template-web
+RUN go build -ldflags="-linkmode external -extldflags -static" -o ./bin/homestart
 
 
 # Production Release Stage
@@ -35,11 +35,11 @@ WORKDIR /app
 ENV GIN_MODE=release
 
 COPY --from=build /etc/passwd /etc/passwd
-COPY --from=build /app/bin/go-template-web ./go-template-web
+COPY --from=build /app/bin/homestart ./homestart
 COPY --from=build /app/public/ ./public/
 COPY --from=build /app/templates/ ./templates/
 
 USER appuser
 EXPOSE 8080
 
-CMD ["./go-template-web"]
+CMD ["./homestart"]

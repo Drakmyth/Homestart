@@ -4,15 +4,15 @@ tmp_dir = "bin"
 
 [build]
 args_bin = []
-bin = "bin/go-template-web-hot"
-cmd = "go build -gcflags='all=-N -l' -o ./bin/go-template-web-hot ."
+bin = "bin/homestart-hot"
+cmd = "go build -gcflags='all=-N -l' -o ./bin/homestart-hot ."
 delay = 1000
 exclude_dir = ["assets", "bin", "vendor", "testdata"]
 exclude_file = []
 exclude_regex = ["_test.go"]
 exclude_unchanged = false
 follow_symlink = false
-full_bin = "dlv exec --accept-multiclient --log --headless --continue --listen :2345 --api-version 2 ./bin/go-template-web-hot"
+full_bin = "dlv exec --accept-multiclient --log --headless --continue --listen :2345 --api-version 2 ./bin/homestart-hot"
 include_dir = []
 include_ext = ["go", "html"]
 include_file = []
